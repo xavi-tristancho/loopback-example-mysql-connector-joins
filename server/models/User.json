@@ -1,0 +1,22 @@
+{
+  "name": "CustomUser",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "mysql": {
+      "table": "User"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "roles": {
+      "type": "hasMany",
+      "model": "Role",
+      "foreignKey": "principalId",
+      "through": "RoleMapping",
+      "keyThrough" : "roleId"
+    }
+  },
+  "methods": {}
+}
